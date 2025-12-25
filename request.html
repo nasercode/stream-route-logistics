@@ -56,6 +56,58 @@
 <footer>
   <p>© 2025 Stream Route Logistic Corp</p>
 </footer>
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js"></script>
+<script>
+// Your Firebase config
+const firebaseConfig = {
+  apiKey: "AIzaSyBxOA74yuB2J7QJXZOXO5eGJkapKvg1FLM",
+  authDomain: "stream-route-logistics.firebaseapp.com",
+  databaseURL: "https://stream-route-logistics-default-rtdb.firebaseio.com",
+  projectId: "stream-route-logistics",
+  storageBucket: "stream-route-logistics.firebasestorage.app",
+  messagingSenderId: "589764113248",
+  appId: "1:589764113248:web:ed6680d264f0993a866405"
+};
+
+// Initialize Firebase
+const app = firebase.initializeApp(firebaseConfig);
+const database = firebase.database();
+
+// Form submit function
+const form = document.getElementById('requestForm');
+form.addEventListener('submit', submitForm);
+
+function submitForm(e) {
+  e.preventDefault();
+
+  const name = document.getElementById('name').value;
+  const phone = document.getElementById('phone').value;
+  const email = document.getElementById('email').value;
+  const pickup = document.getElementById('pickup').value;
+  const dropoff = document.getElementById('dropoff').value;
+  const size = document.getElementById('size').value;
+  const time = document.getElementById('time').value;
+  const notes = document.getElementById('notes').value;
+
+  const newRequestRef = database.ref('requests').push();
+  newRequestRef.set({
+    name,
+    phone,
+    email,
+    pickup,
+    dropoff,
+    size,
+    time,
+    notes,
+    status: "Requested"
+  });
+
+  document.getElementById('message').innerText = "Request submitted! Your Tracking ID: " + newRequestRef.key;
+  form.reset();
+}
+</script>
 
 </body>
 </html>
