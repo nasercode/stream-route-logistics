@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Request Delivery - Stream Route Logistic Corp</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Request a Delivery</h1>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="request.html">Request</a>
+  <a href="track.html">Track</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<section>
+  <h2>Delivery Request Form</h2>
+  <form id="requestForm">
+    <label>Full Name:</label><br>
+    <input type="text" name="name" required><br>
+    
+    <label>Phone Number:</label><br>
+    <input type="tel" name="phone" required><br>
+    
+    <label>Email:</label><br>
+    <input type="email" name="email" required><br>
+    
+    <label>Pickup Address:</label><br>
+    <input type="text" name="pickup" required><br>
+    
+    <label>Drop-off Address:</label><br>
+    <input type="text" name="dropoff" required><br>
+    
+    <label>Package Size:</label><br>
+    <select name="size">
+      <option>Small</option>
+      <option>Medium</option>
+      <option>Large</option>
+    </select><br>
+    
+    <label>Preferred Pickup Time:</label><br>
+    <input type="datetime-local" name="time"><br>
+    
+    <label>Notes:</label><br>
+    <textarea name="notes"></textarea><br><br>
+    
+    <button type="submit">Submit</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2025 Stream Route Logistic Corp</p>
+</footer>
+
+</body>
+</html>
