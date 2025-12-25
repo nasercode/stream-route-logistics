@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Track Package - Stream Route Logistic Corp</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Track Your Package</h1>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="request.html">Request</a>
+  <a href="track.html">Track</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<section>
+  <h2>Enter Tracking ID</h2>
+  <input type="text" id="trackingId" placeholder="Enter your Tracking ID">
+  <button onclick="checkStatus()">Check Status</button>
+  <p id="status"></p>
+</section>
+
+<footer>
+  <p>© 2025 Stream Route Logistic Corp</p>
+</footer>
+
+<script>
+function checkStatus() {
+  let id = document.getElementById('trackingId').value;
+  document.getElementById('status').innerText = "Feature coming soon!"; 
+}
+</script>
+
+</body>
+</html>
